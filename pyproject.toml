@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AdversialBP"
+version = "0.1.0"
+description = "Adverserial example generation for business processes."
+readme = "README.rst"
+authors = [
+  {name = "AlexanderPaulStevens", email = "alexanderstevens97@gmail.com"}
+]
+maintainers = [
+  {name = "AlexanderPaulStevens", email = "alexanderstevens97@gmail.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/AlexanderPaulStevens/AdversialBP/issues"
+changelog = "https://github.com/AlexanderPaulStevens/AdversialBP/blob/master/changelog.md"
+homepage = "https://github.com/AlexanderPaulStevens/AdversialBP"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
