@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+# large datasets
+src/labeled_logs_csv_processed/
 # Distribution / packaging
 .Python
 env/
